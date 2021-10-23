@@ -1,0 +1,31 @@
+server:
+  servlet:
+    context-path: /dajiujiu
+  port: 8091
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  datasource:
+    driver-Class-Name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dajiujiu_socks?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    tomcat:
+      init-s-q-l: SET NAMES 'utf8mb4'
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+08
+  transaction:
+    rollback-on-commit-failure: true
